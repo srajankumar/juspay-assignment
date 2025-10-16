@@ -1,7 +1,7 @@
-export default function Home() {
+export default function ECommerce() {
   return (
     <main className="flex flex-col gap-3">
-      <h1 className="font-semibold">Default</h1>
+      <h1 className="font-semibold">Order List</h1>
       <div>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, sed
         ratione reiciendis quo laudantium ipsum labore veniam nemo quas
