@@ -1,5 +1,6 @@
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { TrendingDown, TrendingUp } from "lucide-react";
 import React from "react";
+import { cn } from "@/lib/utils";
 
 export default function Cards() {
   const data = [
@@ -33,29 +34,39 @@ export default function Cards() {
     },
   ];
 
+  const bgMap: Record<string, string> = {
+    "primary-blue": "bg-primary-blue",
+    "primary-light": "bg-primary-light",
+    "primary-purple": "bg-primary-purple",
+  };
+
   return (
-    <div className="grid sm:grid-cols-2 grid-cols 1 gap-4">
-      {data.map((item) => (
-        <div
-          key={item.id}
-          className={`p-5 rounded-xl bg-${item.background} ${
-            item.background !== "primary-light" ? "dark:text-black" : ""
-          }`}
-        >
-          <h2 className="font-semibold">{item.title}</h2>
-          <div className="grid grid-cols-2 gap-3">
-            <p className="font-semibold text-2xl">{item.value}</p>
-            <span className="flex text-xs items-center justify-center gap-1">
-              {item.change}%{" "}
-              {parseFloat(item.change) > 0 ? (
-                <ArrowUpRight className="w-3 h-3" />
-              ) : (
-                <ArrowDownRight className="w-3 h-3" />
-              )}
-            </span>
+    <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
+      {data.map((item) => {
+        return (
+          <div
+            key={item.id}
+            className={cn(
+              "p-5 rounded-xl",
+              bgMap[item.background] ?? item.background,
+              item.background !== "primary-light" ? "dark:text-black" : ""
+            )}
+          >
+            <h2 className="font-semibold">{item.title}</h2>
+            <div className="grid grid-cols-2 gap-3">
+              <p className="font-semibold text-2xl">{item.value}</p>
+              <span className="flex text-xs items-center justify-center gap-1">
+                {item.change}%{" "}
+                {parseFloat(item.change) > 0 ? (
+                  <TrendingUp className="w-3 h-3" />
+                ) : (
+                  <TrendingDown className="w-3 h-3" />
+                )}
+              </span>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { BarChartComponent } from "@/components/e-commerce/bar-chart";
 import Cards from "@/components/e-commerce/cards";
 
 export default function ECommerce() {
@@ -6,6 +7,7 @@ export default function ECommerce() {
       <h1 className="font-semibold">eCommerce</h1>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
         <Cards />
+        <BarChartComponent />
       </div>
     </main>
   );
