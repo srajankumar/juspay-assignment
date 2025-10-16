@@ -50,6 +50,9 @@
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
+  --primary-blue: #e3f5ff;
+  --primary-purple: oklch(94.071% 0.01556 257.3);
+  --primary-light: oklch(0.269 0 0);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);

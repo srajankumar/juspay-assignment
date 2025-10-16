@@ -1,35 +1,35 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import React from "react";
 
 export default function Cards() {
   const data = [
     {
+      id: 1,
       title: "Customers",
       value: "3,781",
-      change: "+11.01%",
-      icon: <ArrowUpRight className="w-3 h-3" />,
+      change: "+11.01",
       background: "primary-blue",
     },
     {
-      title: "Customers",
-      value: "3,781",
-      change: "+11.01%",
+      id: 2,
+      title: "Orders",
+      value: "1,218",
+      change: "-0.03",
       background: "primary-light",
-      icon: <ArrowUpRight className="w-3 h-3" />,
     },
     {
-      title: "Customers",
-      value: "3,781",
-      change: "+11.01%",
+      id: 3,
+      title: "Revenue",
+      value: "$695",
+      change: "+15.03",
       background: "primary-light",
-      icon: <ArrowUpRight className="w-3 h-3" />,
     },
     {
+      id: 4,
       title: "Customers",
-      value: "3,781",
-      change: "+11.01%",
+      value: "30.1%",
+      change: "+6.08",
       background: "primary-purple",
-      icon: <ArrowUpRight className="w-3 h-3" />,
     },
   ];
 
@@ -37,14 +37,21 @@ export default function Cards() {
     <div className="grid sm:grid-cols-2 grid-cols 1 gap-4">
       {data.map((item) => (
         <div
-          key={item.title}
-          className={`p-5 rounded-xl bg-${item.background}`}
+          key={item.id}
+          className={`p-5 rounded-xl bg-${item.background} ${
+            item.background !== "primary-light" ? "dark:text-black" : ""
+          }`}
         >
           <h2 className="font-semibold">{item.title}</h2>
           <div className="grid grid-cols-2 gap-3">
             <p className="font-semibold text-2xl">{item.value}</p>
             <span className="flex text-xs items-center justify-center gap-1">
-              {item.change} {item.icon}
+              {item.change}%{" "}
+              {parseFloat(item.change) > 0 ? (
+                <ArrowUpRight className="w-3 h-3" />
+              ) : (
+                <ArrowDownRight className="w-3 h-3" />
+              )}
             </span>
           </div>
         </div>
