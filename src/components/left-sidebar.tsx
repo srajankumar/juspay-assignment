@@ -46,9 +46,9 @@ type NavItem = {
 };
 
 const dashboards_items: NavItem[] = [
-  { title: "Default", url: "/", icon: ChartPie },
-  { title: "eCommerce", url: "/e-commerce", icon: ShoppingBag },
-  { title: "Order List", url: "/order-list", icon: List },
+  { title: "Default", url: "/dashboard", icon: ChartPie },
+  { title: "eCommerce", url: "/dashboard/e-commerce", icon: ShoppingBag },
+  { title: "Order List", url: "/dashboard/order-list", icon: List },
   {
     title: "Projects",
     url: "#",

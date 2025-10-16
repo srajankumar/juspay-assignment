@@ -1,4 +1,4 @@
-export default function ECommerce() {
+export default function OrderList() {
   return (
     <main className="flex flex-col gap-3">
       <h1 className="font-semibold">Order List</h1>
