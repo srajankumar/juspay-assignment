@@ -1,5 +1,6 @@
 import { BarChartComponent } from "@/components/e-commerce/bar-chart";
 import Cards from "@/components/e-commerce/cards";
+import RevenueByLocation from "@/components/e-commerce/revenue-by-location";
 import TopSellingProducts from "@/components/e-commerce/top-selling-products";
 
 export default function ECommerce() {
@@ -10,8 +11,9 @@ export default function ECommerce() {
         <Cards />
         <BarChartComponent />
       </div>
-      <div className="grid lg:grid-cols-3">
+      <div className="grid lg:grid-cols-3 gap-4">
         <TopSellingProducts />
+        <RevenueByLocation />
       </div>
     </main>
   );

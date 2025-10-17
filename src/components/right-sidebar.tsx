@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { Bug, Radio, User2 } from "lucide-react";
 import { SidebarRight, SidebarContent } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 export function RightSidebar() {
   const notifications = [
@@ -128,76 +127,79 @@ export function RightSidebar() {
 
   return (
     <SidebarRight>
-      <SidebarContent>
-        <ScrollArea className="relative h-dvh flex w-full min-w-0 flex-col px-4 py-5">
-          {/* Notifications */}
-          <div className="grid gap-5 pb-8">
-            <h2 className="text-sm font-semibold">Notifications</h2>
-            <ul className="grid gap-4">
-              {notifications.map((n) => (
-                <li key={n.id} className="flex gap-3">
-                  <div
-                    className={cn(
-                      "p-1.5 w-fit h-fit rounded-md text-black",
-                      n.bg
-                    )}
-                  >
-                    {renderIcon(n.icon)}
-                  </div>
-                  <div className="leading-1">
-                    <p className="text-sm">{n.title}</p>
-                    <span className="text-muted-foreground text-xs">
-                      {n.time}
-                    </span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <SidebarContent
+        className="max-h-dvh overflow-y-auto
+  [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:bg-background
+  [&::-webkit-scrollbar-thumb]:bg-secondary relative flex w-full min-w-0 flex-col px-4 py-5"
+      >
+        {/* Notifications */}
+        <div className="grid gap-5 pb-8">
+          <h2 className="text-sm font-semibold">Notifications</h2>
+          <ul className="grid gap-4">
+            {notifications.map((n) => (
+              <li key={n.id} className="flex gap-3">
+                <div
+                  className={cn(
+                    "p-1.5 w-fit h-fit rounded-md text-black",
+                    n.bg
+                  )}
+                >
+                  {renderIcon(n.icon)}
+                </div>
+                <div className="leading-1">
+                  <p className="text-sm">{n.title}</p>
+                  <span className="text-muted-foreground text-xs">
+                    {n.time}
+                  </span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          {/* Activities */}
-          <div className="grid gap-3 pb-8">
-            <h2 className="text-sm font-semibold">Activities</h2>
-            <ul className="relative border-s border-muted-foreground/30 mx-3 grid gap-3">
-              {activities.map((a) => (
-                <li className="ms-6" key={a.id}>
-                  <div className="p-2 rounded-full absolute -start-5 bg-background">
-                    <Avatar className="w-6 h-6">
-                      <AvatarImage
-                        src={`/assets/right-sidebar/activities/${a.img}`}
-                      />
-                      <AvatarFallback>{a.fallback}</AvatarFallback>
-                    </Avatar>
-                  </div>
-                  <div className="leading-1 mt-1">
-                    <p className="text-sm">{a.title}</p>
-                    <span className="text-muted-foreground text-xs">
-                      {a.time}
-                    </span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contacts */}
-          <div className="grid gap-5 pb-20">
-            <h2 className="text-sm font-semibold">Contacts</h2>
-            <ul className="grid gap-4">
-              {contacts.map((c) => (
-                <li key={c.id} className="flex items-center gap-2">
+        {/* Activities */}
+        <div className="grid gap-3 pb-8">
+          <h2 className="text-sm font-semibold">Activities</h2>
+          <ul className="relative border-s border-muted-foreground/30 mx-3 grid gap-3">
+            {activities.map((a) => (
+              <li className="ms-6" key={a.id}>
+                <div className="p-2 rounded-full absolute -start-5 bg-background">
                   <Avatar className="w-6 h-6">
                     <AvatarImage
-                      src={`/assets/right-sidebar/contacts/${c.img}`}
+                      src={`/assets/right-sidebar/activities/${a.img}`}
                     />
-                    <AvatarFallback>{c.fallback}</AvatarFallback>
+                    <AvatarFallback>{a.fallback}</AvatarFallback>
                   </Avatar>
-                  <span className="text-sm">{c.name}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </ScrollArea>
+                </div>
+                <div className="leading-1 mt-1">
+                  <p className="text-sm">{a.title}</p>
+                  <span className="text-muted-foreground text-xs">
+                    {a.time}
+                  </span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contacts */}
+        <div className="grid gap-5 pb-20">
+          <h2 className="text-sm font-semibold">Contacts</h2>
+          <ul className="grid gap-4">
+            {contacts.map((c) => (
+              <li key={c.id} className="flex items-center gap-2">
+                <Avatar className="w-6 h-6">
+                  <AvatarImage
+                    src={`/assets/right-sidebar/contacts/${c.img}`}
+                  />
+                  <AvatarFallback>{c.fallback}</AvatarFallback>
+                </Avatar>
+                <span className="text-sm">{c.name}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </SidebarContent>
     </SidebarRight>
   );

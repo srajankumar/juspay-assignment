@@ -35,7 +35,6 @@ import {
 } from "@/components/ui/collapsible";
 import NameBadge from "@/components/sidebar/name-badge";
 import TabSection from "@/components/sidebar/tab-section";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 type SubItem = { title: string; url: string };
 type NavItem = {
@@ -203,29 +202,32 @@ export function LeftSidebar() {
       <SidebarHeader>
         <NameBadge />
       </SidebarHeader>
-      <ScrollArea className="h-[90%]">
-        <SidebarContent>
-          <TabSection />
-          <div className="pb-20">
-            {sections.map((sec) => (
-              <SidebarGroup key={sec.label}>
-                <SidebarGroupLabel>{sec.label}</SidebarGroupLabel>
-                <SidebarGroupContent>
-                  <SidebarMenu>
-                    {sec.items.map((item) => (
-                      <RenderNavItem
-                        key={item.title}
-                        item={item}
-                        pathname={pathname}
-                      />
-                    ))}
-                  </SidebarMenu>
-                </SidebarGroupContent>
-              </SidebarGroup>
-            ))}
-          </div>
-        </SidebarContent>
-      </ScrollArea>
+      <SidebarContent
+        className="max-h-dvh overflow-y-auto
+  [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:bg-background
+  [&::-webkit-scrollbar-thumb]:bg-secondary"
+      >
+        <TabSection />
+        <div className="pb-20">
+          {sections.map((sec) => (
+            <SidebarGroup key={sec.label}>
+              <SidebarGroupLabel>{sec.label}</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {sec.items.map((item) => (
+                    <RenderNavItem
+                      key={item.title}
+                      item={item}
+                      pathname={pathname}
+                    />
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          ))}
+        </div>
+      </SidebarContent>
     </SidebarLeft>
   );
 }

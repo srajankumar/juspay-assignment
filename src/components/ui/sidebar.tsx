@@ -451,6 +451,7 @@ const SidebarInput = React.forwardRef<
   return (
     <Input
       data-sidebar="input"
+      ref={ref}
       className={cn("bg-background h-8 w-full shadow-none", className)}
       {...props}
     />
@@ -532,6 +533,7 @@ const SidebarGroup = React.forwardRef<
         "relative flex w-full min-w-0 flex-col p-2 px-4",
         className
       )}
+      ref={ref}
       {...props}
     />
   );
@@ -830,7 +832,7 @@ SidebarMenuSub.displayName = "SidebarMenuSub";
 const SidebarMenuSubItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentProps<"li">
->(({ ...props }, ref) => <li ref={ref} {...props} />);
+>(({ ...props }, ref) => <li className="my-0.5" ref={ref} {...props} />);
 SidebarMenuSubItem.displayName = "SidebarMenuSubItem";
 
 const SidebarMenuSubButton = React.forwardRef<
