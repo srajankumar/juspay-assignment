@@ -16,14 +16,14 @@ import {
   Users,
 } from "lucide-react";
 import {
-  Sidebar,
+  SidebarLeft,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuButton,
+  SidebarLeftMenuButton,
   SidebarMenuItem,
   SidebarMenuSub,
   SidebarMenuSubItem,
@@ -158,12 +158,12 @@ function RenderNavItem({
           className="group"
         >
           <CollapsibleTrigger asChild>
-            <SidebarMenuButton isActive={isActive}>
+            <SidebarLeftMenuButton isActive={isActive}>
               <ActiveBar isActive={isActive} />
               <ChevronRight className="transition-transform group-data-[state=open]:rotate-90 text-muted-foreground" />
               {Icon && <Icon />}
               <span>{item.title}</span>
-            </SidebarMenuButton>
+            </SidebarLeftMenuButton>
           </CollapsibleTrigger>
           <CollapsibleContent>
             <SidebarMenuSub>
@@ -183,22 +183,22 @@ function RenderNavItem({
 
   return (
     <SidebarMenuItem key={item.title}>
-      <SidebarMenuButton asChild isActive={isActive}>
+      <SidebarLeftMenuButton asChild isActive={isActive}>
         <Link href={item.url} className="pl-9">
           <ActiveBar isActive={isActive} />
           {Icon && <Icon />}
           <span>{item.title}</span>
         </Link>
-      </SidebarMenuButton>
+      </SidebarLeftMenuButton>
     </SidebarMenuItem>
   );
 }
 
-export function AppSidebar() {
+export function LeftSidebar() {
   const pathname = usePathname();
 
   return (
-    <Sidebar>
+    <SidebarLeft>
       <SidebarHeader>
         <NameBadge />
       </SidebarHeader>
@@ -221,6 +221,6 @@ export function AppSidebar() {
           </SidebarGroup>
         ))}
       </SidebarContent>
-    </Sidebar>
+    </SidebarLeft>
   );
 }
