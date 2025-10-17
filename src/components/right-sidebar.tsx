@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { Bug, Radio, User2 } from "lucide-react";
 import { SidebarRight, SidebarContent } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { description } from "./e-commerce/bar-chart";
 
 export function RightSidebar() {
   const notifications = [
@@ -136,7 +135,12 @@ export function RightSidebar() {
             <ul className="grid gap-4">
               {notifications.map((n) => (
                 <li key={n.id} className="flex gap-3">
-                  <div className={cn("p-1.5 w-fit h-fit rounded-md", n.bg)}>
+                  <div
+                    className={cn(
+                      "p-1.5 w-fit h-fit rounded-md text-black",
+                      n.bg
+                    )}
+                  >
                     {renderIcon(n.icon)}
                   </div>
                   <div className="leading-1">
@@ -151,9 +155,9 @@ export function RightSidebar() {
           </div>
 
           {/* Activities */}
-          <div className="grid gap-5">
-            <h2 className="text-sm font-semibold">Notifications</h2>
-            <ul className="relative border-s mx-3 grid gap-3">
+          <div className="grid gap-3">
+            <h2 className="text-sm font-semibold">Activities</h2>
+            <ul className="relative border-s border-muted-foreground/30 mx-3 grid gap-3">
               {activities.map((a) => (
                 <li className="ms-6" key={a.id}>
                   <div className="p-1.5 rounded-full absolute -start-5 bg-background">
