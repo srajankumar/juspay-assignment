@@ -4,21 +4,22 @@ import { useRef } from "react";
 import DottedMap from "dotted-map";
 import Image from "next/image";
 
+import { useTheme } from "next-themes";
+
 interface MapProps {
   dots?: Array<{
     start: { lat: number; lng: number; label?: string };
     end: { lat: number; lng: number; label?: string };
   }>;
   dotColor?: string;
-  dotBg?: string;
 }
 
-export default function WorldMap({
-  dots = [],
-  dotColor = "#000000",
-}: MapProps) {
+export default function WorldMap({ dots = [] }: MapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const map = new DottedMap({ height: 100, grid: "diagonal" });
+
+  const { theme } = useTheme();
+  const dotColor = theme === "dark" ? "#ffffff" : "#000000";
 
   const svgMap = map.getSVG({
     radius: 0.22,
