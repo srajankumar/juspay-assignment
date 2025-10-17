@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { Bug, Radio, User2 } from "lucide-react";
 import { SidebarRight, SidebarContent } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export function RightSidebar() {
   const notifications = [
@@ -127,10 +128,10 @@ export function RightSidebar() {
 
   return (
     <SidebarRight>
-      <SidebarContent className="pb-20">
-        <div className="relative flex w-full min-w-0 flex-col px-4 py-5 gap-8">
+      <SidebarContent>
+        <ScrollArea className="relative h-dvh flex w-full min-w-0 flex-col px-4 py-5">
           {/* Notifications */}
-          <div className="grid gap-5">
+          <div className="grid gap-5 pb-8">
             <h2 className="text-sm font-semibold">Notifications</h2>
             <ul className="grid gap-4">
               {notifications.map((n) => (
@@ -155,12 +156,12 @@ export function RightSidebar() {
           </div>
 
           {/* Activities */}
-          <div className="grid gap-3">
+          <div className="grid gap-3 pb-8">
             <h2 className="text-sm font-semibold">Activities</h2>
             <ul className="relative border-s border-muted-foreground/30 mx-3 grid gap-3">
               {activities.map((a) => (
                 <li className="ms-6" key={a.id}>
-                  <div className="p-1.5 rounded-full absolute -start-5 bg-background">
+                  <div className="p-2 rounded-full absolute -start-5 bg-background">
                     <Avatar className="w-6 h-6">
                       <AvatarImage
                         src={`/assets/right-sidebar/activities/${a.img}`}
@@ -180,7 +181,7 @@ export function RightSidebar() {
           </div>
 
           {/* Contacts */}
-          <div className="grid gap-5">
+          <div className="grid gap-5 pb-20">
             <h2 className="text-sm font-semibold">Contacts</h2>
             <ul className="grid gap-4">
               {contacts.map((c) => (
@@ -196,7 +197,7 @@ export function RightSidebar() {
               ))}
             </ul>
           </div>
-        </div>
+        </ScrollArea>
       </SidebarContent>
     </SidebarRight>
   );
