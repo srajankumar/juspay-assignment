@@ -3,6 +3,7 @@ import Cards from "@/components/e-commerce/cards";
 import { RevenueChart } from "@/components/e-commerce/revenue-chart";
 import RevenueByLocation from "@/components/e-commerce/revenue-by-location";
 import TopSellingProducts from "@/components/e-commerce/top-selling-products";
+import { TotalSalesChart } from "@/components/e-commerce/total-sales-chart";
 
 export default function ECommerce() {
   return (
@@ -18,6 +19,7 @@ export default function ECommerce() {
       </div>
       <div className="grid lg:grid-cols-3 gap-4">
         <TopSellingProducts />
+        <TotalSalesChart />
       </div>
     </main>
   );
