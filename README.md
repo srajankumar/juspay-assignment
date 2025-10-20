@@ -17,10 +17,10 @@ The source code for the project is available in this GitHub repository:
 ## Mockups
 
 <div align="center">
-  <img src="./public/assets/mockup1.png" alt="mockup1"/>
+  <img src="./public/assets/mockups/mockup1.png" alt="mockup1"/>
 </div>
 <div align="center">
-  <img src="./public/assets/mockup2.png" alt="mockup2"/>
+  <img src="./public/assets/mockups/mockup2.png" alt="mockup2"/>
 </div>
 
 ## Installation
