@@ -14,6 +14,17 @@ You can check out the live version of the web app here:
 The source code for the project is available in this GitHub repository:  
 [Source Code - GitHub](https://github.com/srajankumar/juspay-assignment)
 
+## Implemented Pages
+
+### `/dashboard/e-commerce`
+
+- Dashboard showing key sales and revenue metrics.
+- Features interactive charts, animated cards, and custom tooltips for better insights.
+
+### `/dashboard/order-list`
+
+- Interactive order table with sorting, filtering, and pagination.
+
 ## Mockups
 
 <div align="center">

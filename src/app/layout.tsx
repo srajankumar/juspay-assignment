@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "Srajan Kumar - Juspay",
     images: [
       {
-        url: "https://srajan-juspay.vercel.app/assets/mockups/mockup1.png",
+        url: "https://srajan-juspay.vercel.app/assets/mockups/mockup2.png",
         width: 1200,
         height: 630,
         alt: "Srajan Kumar - Juspay",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Srajan Kumar - Juspay",
     description: "Juspay Assignment",
     creator: "@kumarsrajan02",
-    images: ["https://srajan-juspay.vercel.app/assets/mockups/mockup1.png"],
+    images: ["https://srajan-juspay.vercel.app/assets/mockups/mockup2.png"],
   },
 };
 
