@@ -9,7 +9,7 @@ import { Button } from "./ui/button";
 import { Bell, History, Star } from "lucide-react";
 
 import { ReactNode } from "react";
-import Searchbar from "./sidebar/searchbar";
+import Searchbar from "./searchbar";
 
 export function HeaderButton({ children }: { children: ReactNode }) {
   return (
@@ -21,7 +21,7 @@ export function HeaderButton({ children }: { children: ReactNode }) {
 
 export default function Header() {
   return (
-    <div className="py-4 md:px-6 px-4 flex items-center justify-between border-b w-full">
+    <div className="py-4 md:px-6 px-4 flex items-center justify-between border-b w-full gap-2">
       <div className="flex items-center gap-2">
         <SidebarLeftTrigger />
         <HeaderButton>
