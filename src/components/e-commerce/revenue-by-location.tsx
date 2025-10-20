@@ -17,7 +17,7 @@ const LOCATIONS: Location[] = [
 
 export default function RevenueByLocation() {
   return (
-    <div className="p-5 overflow-hidden rounded-xl bg-primary-light">
+    <div className="p-5 overflow-hidden rounded-xl bg-primary-light lg:col-span-1 col-span-2">
       <h2 className="font-semibold mb-3">Revenue By Location</h2>
       <div>
         <WorldMap
