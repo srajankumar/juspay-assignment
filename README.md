@@ -1,18 +1,22 @@
 # Juspay Assignment
 
-This project is an implementation of the provided **SaaS Dashboard designs**. It focuses on high-quality UI fidelity, smooth motion, and meaningful microinteractions for an enhanced user experience.
+A pixel-perfect SaaS Dashboard built with [React](https://react.dev) / [Next.js](https://github.com/vercel/next.js), replicating the given Figma design.
 
-In this project, I used [Next.js](https://github.com/vercel/next.js) for the frontend and [Shadcn UI](https://github.com/shadcn-ui/ui) for the user interface components, and deployed the application using [Vercel](https://github.com/vercel/vercel).
+This project focuses on UI precision, microinteractions, motion design, and code quality, ensuring responsiveness and accessibility across devices.
 
-## Live Demo
+## Features Implemented
 
-You can check out the live version of the web app here:  
-[Deployment Preview](https://srajan-juspay.vercel.app)
+- Pixel-Perfect UI matching Figma
+- Light / Dark Mode toggle
+- Hover Effects for charts
+- Responsive Layouts for Desktop, Tablet, and Mobile
+- Search, Filter, Sort, Pagination
 
-## Source Code
+## Deployment
 
-The source code for the project is available in this GitHub repository:  
-[Source Code - GitHub](https://github.com/srajankumar/juspay-assignment)
+GitHub Repository Link – [Click Here](https://github.com/srajankumar/juspay-assignment)  
+Deployed Link – [Click Here](https://srajan-juspay.vercel.app)  
+Video Recording Link – [Click Here](https://drive.google.com/drive/u/1/folders/1hoB3bqkJvtAMm3cLMqZXM-O4zXxtIkdP)
 
 ## Implemented Pages
 
@@ -24,6 +28,12 @@ The source code for the project is available in this GitHub repository:
 ### `/dashboard/order-list`
 
 - Interactive order table with sorting, filtering, and pagination.
+
+## Challenges Faced
+
+- Maintaining pixel-perfect spacing across screen sizes.
+- Optimizing animations for smooth frame rates on low-end devices.
+- Ensuring responsive layouts matched Figma’s design breakpoints.
 
 ## Mockups
 
@@ -66,6 +76,6 @@ To run this project locally, follow these steps:
 
 ## Contact
 
-Feel free to reach out if you have any questions or feedback on my project - [https://srajan.vercel.app](https://srajan.vercel.app)
+Feel free to reach out if you have any questions or feedback - [https://srajan.vercel.app](https://srajan.vercel.app)
 
 > _Thank you for taking the time to review my assignment. I look forward to hearing back from you soon :)_
